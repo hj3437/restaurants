@@ -84,6 +84,7 @@ main {
 }
 
 main .StoresPage {
+    position: relative;
     margin: 0;
     padding: 0;                  
 }
@@ -176,7 +177,7 @@ main .StoreDetailPage ul li .hover-image img {
     border-radius: 16px;
 }
 
-.hover-image:hover .image-info{    
+.hover-image:hover .image-info {    
     z-index: 1;
 }
 
@@ -188,6 +189,81 @@ main .StoreDetailPage ul li .hover-image img {
 
 .hover-image .image-info p:hover {    
     text-decoration: underline;
+}
+
+main .StoreDetailPage .StoreDetailTitle {
+    display: inline-block;    
+}
+
+main .StoreDetailPage .StoreDetailTitle a {                
+    display: flex;
+    justify-content: start;
+    align-items: center;        
+}
+
+main .StoreDetailPage .StoreDetailTitle a h3 {
+    margin: 0 0 0 8px;
+    padding: 0;    
+}
+
+main .StoreDetailPage .StoreDetailTitle a img {
+    width: 48px;
+    height: 48px;    
+}
+
+main .StoreDetailPage ul {    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 616px;
+    margin-top: 8px;        
+}
+
+main .StoreDetailPage ul li {        
+    margin: 8px 0 0 0;
+    padding: 0;
+    width: 300px;
+    border: 1px solid grey;
+}
+
+main .StoreDetailPage ul li img {
+    width: 140px;
+    height: 120px;    
+}
+
+main .StoreDetailPage ul li i {
+    font-size: 16px;
+}
+
+main .StoreDetailPage li .item-info {
+    display: flex;
+    flex-wrap: wrap;    
+    flex-direction: column;    
+}
+
+main .StoreDetailPage li:hover {
+    border: 1px solid orange;
+}
+
+main .StoreDetailPage li .item-info div {
+    display: flex;
+    flex-direction: column;        
+    padding: 8px 0 0 8px;    
+}
+
+main .StoreDetailPage li .item-info div p {
+    margin: 8px 0 0 0;
+    padding: 0;
+}
+
+main .StoreDetailPage li .item-info .edit-menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; 
+}
+
+main .StoreDetailPage li .item-info .edit-menu a:first-child{
+    margin-right: 8px;       
 }
 
 @media (max-width: 912px){    

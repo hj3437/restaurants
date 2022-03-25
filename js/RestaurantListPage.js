@@ -2,6 +2,8 @@ import { request } from '/js/api.js'
 import { onClick } from "/js/clickListener.js"
 
 export default function RestaurantListPage({ $app }) {
+    $app.innerHTML = ''
+
     this.state = {}
 
     const $page = document.createElement('div')
@@ -13,12 +15,11 @@ export default function RestaurantListPage({ $app }) {
         this.render()
     }
 
-    this.render = () => {
-        console.log('레스토랑 목록 렌더링 함수 호출됨');
-        // console.log(this.state);
+    this.render = () => {                
         const { restaurants } = this.state
         if (restaurants) {
-            console.log(restaurants);
+            // console.log('레스토랑 목록 렌더링 함수 호출됨');
+            // console.log(restaurants);
             $page.innerHTML = `
             <ul>
                 ${restaurants.map(restaurant => `                
