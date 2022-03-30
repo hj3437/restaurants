@@ -5,18 +5,18 @@ import { initClickEvent } from "/js/clickListener.js"
 export default function App({ $app }) {
     this.router = () => {
         const { pathname } = location
-        console.log(pathname);
+        // console.log(pathname);
 
         if (pathname === '/') {
-            new RestaurantListPage({ $app })                                      
+            new RestaurantListPage({ $app })
         } else if (pathname.indexOf('/restaurants/') === 0) {
-            const [, , restaurantId] = pathname.split('/')            
+            const [, , restaurantId] = pathname.split('/')
             new RestaurantDetailPage({
                 $app, initialState: {
                     restaurantId: restaurantId
                 }
             })
-        }else {
+        } else {
             new RestaurantListPage({ $app })
         }
     }

@@ -1,6 +1,6 @@
 html, body {
     padding: 0;
-    margin: 0;
+    margin: 0;    
 }
 
 ul,li {
@@ -231,6 +231,12 @@ main .StoreDetailPage ul li img {
     height: 120px;    
 }
 
+.store-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 main .StoreDetailPage ul li i {
     font-size: 16px;
 }
@@ -262,8 +268,52 @@ main .StoreDetailPage li .item-info .edit-menu {
     flex-wrap: nowrap; 
 }
 
-main .StoreDetailPage li .item-info .edit-menu a:first-child{
+main .StoreDetailPage li .item-info .edit-menu span:first-child {
     margin-right: 8px;       
+}
+
+main .StoreDetailPage li .item-info .edit-menu span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.store-add, .add-button, .update-button, .cancel-button {
+    display: inline-block;        
+    margin: 4px 0 24px 0;
+    padding: 8px;
+    border: 1px solid grey;
+    font-size: 14px;
+}
+
+.add-menu {
+    display: inline-block;        
+    margin: 16px 0 8px 0;
+    padding: 8px;
+    border: 1px solid grey;
+    font-size: 14px;
+}
+
+.store-add:hover, .add-button:hover, .cancel-button:hover, .add-menu:hover, .update-button:hover {
+    cursor: pointer;    
+    background-color: gray;
+    color: white;
+}
+
+
+.store-delete {
+    margin-right: 4px;
+}
+
+.store-edit:hover, .store-delete:hover {
+    text-decoration: underline;
+}
+
+#storeName, #storePrice, #storeAddress, #storeImageUrl {
+    /* width: 300px;
+    height: 300px; */
+    height: 36px;
+    font-size: 12px;
+    padding-left: 12px;
 }
 
 @media (max-width: 912px){    

@@ -1,13 +1,22 @@
 const BASE_URL = 'https://dosorme.ga/api/restaurants'
 
-export const request = async (restaurantId, itemsId) => {
+export const request = async (restaurantId, itemsText, itemId) => {
     try {
         const restaurantUrl = restaurantId ? `/${restaurantId}` : ''        
-        let itemUrl = ''        
+        
+        let itemStr = ''        
         if (restaurantUrl) {
-            itemUrl = itemsId ? `/${itemsId}` : ''
-        }        
-        const requestUrl = `${BASE_URL}${restaurantUrl}${itemUrl}`                    
+            itemStr = itemsText ? `/${itemsText}` : ''
+        }
+        
+        let itemIdStr = ''        
+        if (itemsText) {
+            itemIdStr = itemId ? `/${itemId}` : ''
+        }         
+        const requestUrl = `${BASE_URL}${restaurantUrl}${itemStr}${itemIdStr}`    
+        
+        // console.log(requestUrl);
+        
         const response = await fetch(requestUrl)
         if (response.ok) {
             return response.json()
