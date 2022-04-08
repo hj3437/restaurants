@@ -147,6 +147,11 @@ header .header-container .header-top .header-right span:hover {
     color: white;
 }
 
+header .header-container .header-top .header-right .header-logout {
+    background-color: grey;
+    color: white;
+}
+
 main {
     width: 900px;
     margin: 0 auto;

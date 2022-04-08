@@ -2,7 +2,7 @@ import RestaurantListPage from '/js/RestaurantListPage.js'
 import RestaurantDetailPage from '/js/RestaurantDetailPage.js'
 import SearchInput from '/js/SearchInput.js'
 import SearchResult from '/js/SearchResult.js'
-import LogInPage from '/js/LogInPage.js'
+import AccountStatusPage from '/js/AccountStatusPage.js'
 import { initClickEvent } from "/js/clickListener.js"
 
 export default function App({ $app, $header }) {
@@ -33,9 +33,11 @@ export default function App({ $app, $header }) {
             }
         }
     })
-
+    
     const searchResult = new SearchResult({ $header, initState: { currentPage: 1 }, onSearch: {} })
+    new AccountStatusPage({ $app, $header })
 
+    
     this.setState = (nextState) => {
         this.state = nextState
         searchResult.setState({ ...this.state, currentPage: 1, searchResult: this.state.searchResult, searchKeyword: this.state.searchKeyword })
@@ -62,11 +64,5 @@ export default function App({ $app, $header }) {
 
     this.router()
 
-    window.addEventListener('popstate', this.router)
-
-    $header.addEventListener('click', (e) => {
-        if (e.target.closest('.header-login')) {
-            new LogInPage({ $app, display: true })
-        }
-    })
+    window.addEventListener('popstate', this.router)    
 }

@@ -19,6 +19,15 @@ export default function RestaurantDetailPage({ $app, initialState }) {
     this.render = () => {        
         const { store } = this.state
         if (store) {
+
+            const adminItemAddOption = ` <span class="add-menu">메뉴추가</span>`
+            const adminItemEditOption = `
+                <div class="edit-menu">
+                    <span class="edit-button">편집</span>
+                    <span class="delete-button">삭제</span>
+                </div>
+            `            
+
             $page.innerHTML = `
             <div class="StoreDetailTitle">
                 <a href="/restaurants/${store.storeId}">
@@ -27,7 +36,7 @@ export default function RestaurantDetailPage({ $app, initialState }) {
                 </a>
             </div>
             <div>
-                <span class="add-menu">메뉴추가</span>
+                ${sessionStorage.getItem("store-admin")? adminItemAddOption :``}  
             </div>
             <ul>
                 ${store.items.map(item => `
@@ -38,10 +47,7 @@ export default function RestaurantDetailPage({ $app, initialState }) {
                             <p>${item.name}</p>
                             <p><i>${item.price.toLocaleString('ko-KR')}</i> 원</p>
                         </div>                        
-                        <div class="edit-menu">
-                            <span class="edit-button">편집</span>
-                            <span class="delete-button">삭제</span>
-                        </div>
+                        ${sessionStorage.getItem("store-admin")? adminItemEditOption :``}  
                     </div>                  
                 </li>
                 `).join('')}        
@@ -102,8 +108,7 @@ export default function RestaurantDetailPage({ $app, initialState }) {
         }
     })
 
-    const fetchDeleteMenu = async (storeId, itemId) => {
-        // const BASE_URL = 'http://localhost:8989/api/restaurants'
+    const fetchDeleteMenu = async (storeId, itemId) => {        
         const BASE_URL = 'https://dosorme.ga/api/restaurants'
         try {
             const options = {

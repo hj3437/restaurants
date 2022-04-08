@@ -19,9 +19,19 @@ export default function RestaurantListPage({ $app }) {
 
     this.render = () => {
         const { restaurants } = this.state
-        if (restaurants) {            
+        if (restaurants) {     
+            
+            const adminStoreAddOption = `<span class="store-add">스토어 추가</span>`
+
+            const adminStoreEditOption = `
+                <div>
+                    <span class="store-edit">편집</span>
+                    <span class="store-delete">삭제</span>
+                </div>
+            `
+
             $page.innerHTML = `
-            <span class="store-add">스토어 추가</span>
+            ${sessionStorage.getItem("store-admin")? adminStoreAddOption :``}  
             <ul>
                 ${restaurants.map(restaurant => {                    
                     return `                
@@ -32,10 +42,7 @@ export default function RestaurantListPage({ $app }) {
                                     <h4>${restaurant.name}</h4>
                                     <span>${restaurant.address}</span>
                                 </div>
-                                <div>
-                                    <span class="store-edit">편집</span>
-                                    <span class="store-delete">삭제</span>
-                                </div>
+                                ${sessionStorage.getItem("store-admin")? adminStoreEditOption :``}                                
                             </div>
                         </li>
                     `
