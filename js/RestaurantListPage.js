@@ -19,9 +19,7 @@ export default function RestaurantListPage({ $app }) {
 
     this.render = () => {
         const { restaurants } = this.state
-        if (restaurants) {
-            // console.log('레스토랑 목록 렌더링 함수 호출됨');
-            // console.log(restaurants);
+        if (restaurants) {            
             $page.innerHTML = `
             <span class="store-add">스토어 추가</span>
             <ul>
@@ -66,14 +64,11 @@ export default function RestaurantListPage({ $app }) {
             const { restaurantId } = li.dataset
 
             if (e.target.closest('.store-edit')) {
-                console.log('EDIT', restaurantId);
                 new RestaurantListEdit({ $app, initialState: { restaurantId: restaurantId } })
                 return
             }
 
             if (e.target.closest('.store-delete')) {
-                console.log('DELETE', restaurantId);
-
                 const result = confirm('메뉴를 삭제하시겠습니까?')
                 if (result) {
                     fetchStoreDelete(restaurantId)
@@ -87,13 +82,11 @@ export default function RestaurantListPage({ $app }) {
         }
 
         if (e.target.closest('.store-add')) {
-            console.log('Add');
             new RestaurantListAdd({ $app })
         }
     })
 
     const fetchStoreDelete = async (storeId) => {
-        // const BASE_URL = 'http://localhost:8989/api/restaurants'
         const BASE_URL = 'https://dosorme.ga/api/restaurants'
         try {
             const options = {
