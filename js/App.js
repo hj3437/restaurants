@@ -18,7 +18,7 @@ export default function App({ $app, $header }) {
         },
         onSearch: async (inputText) => {
             this.setState({ ...this.state, searchKeyword: inputText })
-            const BASE_URL = 'http://localhost:8989/api/restaurants/search/'
+            const BASE_URL = 'https://dosorme.ga/api/restaurants/search/'
             const fullUrl = `${BASE_URL}${inputText ? inputText : ''}`
             try {
                 const response = await fetch(fullUrl)

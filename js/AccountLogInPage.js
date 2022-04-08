@@ -76,7 +76,7 @@ export default function AccountLogInPage({ $app, display }) {
     })
 
     const checkUser = async (userId, userPassword) => {
-        const BASE_URL = 'http://localhost:8989/api/user/'
+        const BASE_URL = 'https://dosorme.ga/api/user/'
         try {
             const userData = JSON.stringify({ id: userId, password: userPassword })
             const options = {
