@@ -35,6 +35,10 @@ input {
     display: none !important;
 }
 
+.underline {
+    text-decoration: underline;
+}
+
 .material-icons-outlined {
     font-family: 'Material Icons';
     font-weight: normal;
@@ -184,7 +188,7 @@ main .StoresPage ul li img {
     margin-bottom: 4px;
 }
 
-main .StoresPage ul li:hover {
+main .StoresPage>ul li:hover {
     cursor: pointer;
     background-color: #e5e5e5;
 }
@@ -195,6 +199,52 @@ main .StoresPage ul li h4 {
 
 main .StoresPage ul li span {
     color: grey;
+}
+
+main .StoresPage .store-index,
+main .StoresPage .store-index ul,
+main .StoresPage .store-index li {
+    all: unset;
+}
+
+/* 페이지 버튼 */
+main .StoresPage .store-index li span {
+    display: inline-block;
+    
+    padding: 4px 8px;
+    font-weight: 400;
+    font-size: 20px;
+    color: black;
+}
+
+main .StoresPage .store-index li:hover span {
+    cursor: pointer;
+    background-color: gray;
+    color: white;
+}
+
+/* 이전, 다음 페이지 버튼*/
+main .StoresPage .store-index .page-prev span,
+main .StoresPage .store-index .page-next span {
+    color: black;
+}
+
+main .StoresPage .store-index .page-prev:hover span,
+main .StoresPage .store-index .page-next:hover span {
+    color: gold;
+}
+
+/* 총 페이지 수*/
+main .StoresPage .store-index li:first-child span {
+    all: unset;
+    font-size: 12px;
+    margin-right: 16px;
+}
+
+main .StoresPage .store-index li:first-child span:hover {
+    cursor: auto;
+    background-color: white;
+    color: black;
 }
 
 main .StoreDetailPage {
@@ -225,11 +275,6 @@ main .hover-image {
 main .hover-image img {
     width: 160px;
     height: 160px;
-    transition: transform 0.3s linear;
-}
-
-.hover-image:hover img {
-    /* transform:scale(1.1); */
 }
 
 .hover-image .image-info {
@@ -524,8 +569,8 @@ main .StoreDetailPage li .item-info .edit-menu span:hover {
 
 .LogInPage .modal-content .login-option-buttons {
     display: flex;
-    flex-direction: column;        
-    font-size: 12px;  
+    flex-direction: column;
+    font-size: 12px;
     line-height: 30px;
     text-align: center;
 }
@@ -533,9 +578,9 @@ main .StoreDetailPage li .item-info .edit-menu span:hover {
 .LogInPage .modal-content .login-option-buttons span {
     width: 100%;
     height: 30px;
-    color: black;    
-    font-size: 14px; 
-    font-weight: 600;  
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
     background-color: aquamarine;
 }
 
@@ -547,8 +592,8 @@ main .StoreDetailPage li .item-info .edit-menu span:hover {
 
 .LogInPage .modal-content .login-option-buttons p {
     display: inline-block;
-    width: 100%;    
-    text-align: center;      
+    width: 100%;
+    text-align: center;
     border-radius: 4px;
 }
 

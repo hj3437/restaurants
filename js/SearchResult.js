@@ -7,7 +7,6 @@ export default function SearchResult({ $header, initState, onSearch }) {
     const $page = document.createElement('div')
     $page.className = 'SearchResult'
     $header.querySelector('.header-container').appendChild($page)
-    // $header.appendChild($page)
 
     this.setState = (nextState) => {
         this.state = nextState
@@ -39,7 +38,7 @@ export default function SearchResult({ $header, initState, onSearch }) {
                         <span class="search-next-button">다음</span>
                         <span class="search-close-button">닫기</span>
                     </li>                        
-                <ul>                                
+                <ul>               
             </div>
             `
             $page.style.border = 'solid 1px grey'

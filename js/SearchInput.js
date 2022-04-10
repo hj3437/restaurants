@@ -8,10 +8,6 @@ export default function SearchInput({ $header, initState, onSearch }) {
     }
 
     this.render = () => {
-        const { result } = this.state
-        if (result) {
-            console.log('result:', result);
-        }
     }
 
     this.render()

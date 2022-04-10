@@ -33,11 +33,11 @@ export default function App({ $app, $header }) {
             }
         }
     })
-    
+
     const searchResult = new SearchResult({ $header, initState: { currentPage: 1 }, onSearch: {} })
     new AccountStatusPage({ $app, $header })
 
-    
+
     this.setState = (nextState) => {
         this.state = nextState
         searchResult.setState({ ...this.state, currentPage: 1, searchResult: this.state.searchResult, searchKeyword: this.state.searchKeyword })
@@ -47,7 +47,7 @@ export default function App({ $app, $header }) {
         const { pathname } = location
 
         if (pathname === '/') {
-            new RestaurantListPage({ $app })
+            new RestaurantListPage({ $app})
         } else if (pathname.indexOf('/restaurants/') === 0) {
             const [, , restaurantId] = pathname.split('/')
             new RestaurantDetailPage({
@@ -64,5 +64,5 @@ export default function App({ $app, $header }) {
 
     this.router()
 
-    window.addEventListener('popstate', this.router)    
+    window.addEventListener('popstate', this.router)
 }

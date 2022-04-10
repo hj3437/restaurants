@@ -23,7 +23,7 @@ export default function RestaurantEditPage({ $app, initialState }) {
             <p>메뉴명</p>
             <input id="storeName" type ='text' name='description' value="${store.name}">
             <p>가격</p>
-            <input id="storePrice" type ='text' name='description' value="${store.price}">                       
+            <input id="storePrice" type ='number' name='description' value="${store.price}">                       
             <p>이미지 주소</p>
             <input id="storeImageUrl" type ='text' name='description' value="${store.imageUrl}"> 
             <div>

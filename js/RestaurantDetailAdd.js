@@ -18,7 +18,7 @@ export default function RestaurantAddMenuPage({ $app, initialState }) {
             <p>메뉴명</p>
             <input id="storeName" type ='text' name='description' value="">
             <p>가격</p>
-            <input id="storePrice" type ='text' name='description' value="">                       
+            <input id="storePrice" type ='number' name='description' value="" placeholder="숫자값">                       
             <p>이미지 주소</p>
             <input id="storeImageUrl" type ='text' name='description' value=""> 
             <div>
