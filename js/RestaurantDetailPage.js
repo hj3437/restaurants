@@ -2,6 +2,8 @@ import { request } from '/js/api.js'
 import RestaurantDetailEdit from '/js/RestaurantDetailEdit.js'
 import RestaurantDetailAdd from '/js/RestaurantDetailAdd.js'
 
+const MAX_PAGE = 4
+
 export default function RestaurantDetailPage({ $app, initialState }) {
     $app.innerHTML = ''
 
