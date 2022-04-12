@@ -24,8 +24,7 @@ export default function RestaurantListEdit({ $app, initialState }) {
                 <p>주소</p>
                 <input id="storeAddress" type ='text' name='description' value="${restaurant.address}">                       
                 <p>이미지 </p>
-                <input id="storeImageUrl" type ='text' name='description' value="${restaurant.imageUrl}"
-                size=50> 
+                <input id="storeImageUrl" type ='text' name='description' value="${restaurant.imageUrl}">                 
                 <div>
                     <span class="add-button">저장</span>
                     <a class="cancel-button"href=''>취소</a>
@@ -42,7 +41,7 @@ export default function RestaurantListEdit({ $app, initialState }) {
             const name = $page.querySelector('#storeName').value
             const address = $page.querySelector('#storeAddress').value
             const imageUrl = $page.querySelector('#storeImageUrl').value
-            console.log(`${name}, ${address}, ${imageUrl}`);
+            // console.log(`${name}, ${address}, ${imageUrl}`);
 
             const { restaurantId } = this.state
             // console.log(restaurantId);
